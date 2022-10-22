@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons8-clear-symbol-40.png" />
+    <None Remove="icons8-hamburger-40.png" />
+    <None Remove="icons8-time-machine-40.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\icons8-clear-symbol-40.png" />
+    <Resource Include="Icons\icons8-hamburger-40.png" />
+    <Resource Include="Icons\icons8-time-machine-40.png" />
+  </ItemGroup>
+
+</Project>
