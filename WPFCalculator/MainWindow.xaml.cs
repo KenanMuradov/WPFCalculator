@@ -99,7 +99,7 @@ namespace WPFCalculator
 
                 if (_result.ToString() == "∞")
                 {
-                    MessageBox.Show("Cannot Divide by zero");
+                    MessageBox.Show("Cannot Divide by zero","Warning",MessageBoxButton.OK,MessageBoxImage.Warning);
                     txt.Text = "0";
                     return;
                 }
@@ -134,7 +134,7 @@ namespace WPFCalculator
         }
 
 
-        private void txt_KeyDown(object sender, KeyEventArgs e)
+        private void txt_KeyUp(object sender, KeyEventArgs e)
         {
             bool isDigit = e.Key switch
             {
@@ -150,6 +150,9 @@ namespace WPFCalculator
                 Key.NumPad9 => true,
                 _ => false
             };
+
+
+            
 
             if (isDigit)
             {
@@ -172,6 +175,10 @@ namespace WPFCalculator
                 return;
             }
 
+            if (string.IsNullOrEmpty(txt.Text))
+                return;
+
+
             if (char.IsDigit(txt.Text[txt.Text.Length - 1]))
             {
                 txt.Text += e.Key switch
@@ -179,20 +186,19 @@ namespace WPFCalculator
                     Key.Divide => '÷',
                     Key.Add => '+',
                     Key.Subtract => '-',
-                    Key.Multiply => '*',
+                    Key.Multiply => '×',
                     Key.Decimal => '.',
                     _ => string.Empty
                 };
             }
 
-            if (string.IsNullOrEmpty(txt.Text))
-                return;
-
-            if(e.Key==Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 CalculateResult();
                 txt.Text = _result.ToString();
             }
+            else if (e.Key == Key.Back)
+                txt.Text = txt.Text.Remove(txt.Text.Length - 1);
         }
     }
 }

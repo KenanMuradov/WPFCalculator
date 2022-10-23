@@ -71,7 +71,7 @@
             <TextBox 
                 Name="txt"
                 Text="0"
-                KeyDown="txt_KeyDown"
+                KeyUp="txt_KeyUp"
                 MaxLength="20"
                 BorderThickness="0"
                 IsReadOnly="True"
@@ -94,6 +94,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
+                    Click="ButtonComingSoon_Click"
                     BorderThickness="0"
                     Background="Transparent"
                     Margin="2"
@@ -104,6 +105,7 @@
                        >MC</Button>
 
                 <Button 
+                    Click="ButtonComingSoon_Click"
                     BorderThickness="0"
                     Background="Transparent"
                     Margin="2"
@@ -115,6 +117,7 @@
                        >MR</Button>
 
                 <Button
+                    Click="ButtonComingSoon_Click"
                     BorderThickness="0"
                     Background="Transparent"
                     Margin="2"
@@ -126,6 +129,7 @@
                        >M+</Button>
 
                 <Button
+                    Click="ButtonComingSoon_Click"
                     BorderThickness="0"
                     Background="Transparent"
                     Margin="2"
@@ -137,6 +141,7 @@
                        >M-</Button>
 
                 <Button
+                    Click="ButtonComingSoon_Click"
                     BorderThickness="0"
                     Background="Transparent"
                     Margin="2"
@@ -148,6 +153,7 @@
                        >MS</Button>
 
                 <Button
+                    Click="ButtonComingSoon_Click"
                     BorderThickness="0"
                     Background="Transparent"
                     Margin="2"
